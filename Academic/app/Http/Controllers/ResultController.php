@@ -10,18 +10,21 @@ class ResultController extends Controller
 {
     //
 
+    //Result view
     function result($id){
         $results = Result::with('course')->orderBy('semester','ASC')->get()->where('student_id','=',$id);
         $student = $id;
         return view('studentresult',['results'=>$results,'student'=>$student]);
     }
 
+    //New course adding form
     function select($id){
         $student = $id;
         $courses = Course::all();
         return view('addcourse',['courses'=>$courses,'student'=>$student]);
     }
 
+    //New course adding & set result
     function store(Request $request){
         $newresult = new Result;
         $newresult->student_id = $request->student_id;
@@ -44,10 +47,13 @@ class ResultController extends Controller
         }
     }
 
+    //Set result form
     function edit($id){
         $results = Result::find($id);
         return view('editresult',['results'=>$results]);
     }
+
+    //Delete course with result
     function destroy($id)
     {
         $student = Result::find($id);

@@ -6,16 +6,18 @@ use Illuminate\Http\Request;
 use App\Models\Student;
 class StudentController extends Controller
 {
-    //
+    //Main display
     function index(){
         $students = Student::all();
         return view('studentview',['students'=>$students]);
     }
-    
+
+    //New student creating form
     function create(){
         return view('createstudent');
     }
 
+    //New student adding & updating
     function store(Request $request){
         $request->validate([
             'student_id' => 'required',
@@ -49,10 +51,14 @@ class StudentController extends Controller
             return redirect('/');
         }
     }
+   
+    //Existing student update form
     function edit($id){
         $student = Student::find($id);
         return view('editstudent',['student'=>$student]);
     }
+
+    //Existing student delete
     function destroy($id)
     {
         $student = Student::find($id);

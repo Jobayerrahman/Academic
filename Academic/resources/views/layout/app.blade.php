@@ -29,12 +29,6 @@
                         <li class="nav-item">
                         <a class="nav-link" href="{{ url('/course-view') }}">Course</a>
                         </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#">Student result</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                        </li>
                     </ul>
                 </div>
             </div>

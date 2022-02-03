@@ -8,13 +8,18 @@ class CourseController extends Controller
 {
     //
 
+    //Displaying course
     function index(){
         $courses = Course::all();
         return view('courseview',['courses'=>$courses]);
     }
+    
+    //New course creating form
     function create(){
         return view('createcourse');
     }
+
+    //New course create & update
     function store(Request $request){
         $request->validate([
             'course_name' => 'required',
@@ -34,10 +39,14 @@ class CourseController extends Controller
             return redirect('course-view');
         }
     }
+
+    //Existing course updating form
     function edit($id){
         $course = Course::find($id);
         return view('editcourse',['course'=>$course]);
     }
+
+    //Delete course
     function destroy($id)
     {
         $course = course::find($id);
