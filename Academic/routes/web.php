@@ -16,11 +16,11 @@ use App\Http\Controllers\ResultController;
 */
 
 Route::get('/', function () {
-    return view('studentview');
+    return view('welcome');
 });
 
-Route::get('/',[StudentController::class,'index']);
-Route::get('student',[StudentController::class,'create']);
+Route::get('/student-list',[StudentController::class,'index']);
+Route::get('/student-create',[StudentController::class,'create']);
 Route::post('student-store',[StudentController::class,'store']);
 Route::get('student-edit/{id}',[StudentController::class,'edit']);
 Route::post('student-store/{id}',[StudentController::class,'store']);
@@ -44,3 +44,7 @@ Route::post('result-store',[ResultController::class,'store']);
 Route::get('result-edit/{id}',[ResultController::class,'edit']);
 Route::post('result-store/{id}',[ResultController::class,'store']);
 Route::get('result-delete/{id}',[ResultController::class,'destroy']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
