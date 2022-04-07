@@ -7,7 +7,7 @@
             <h2>Student List</h2>
         </div>
         <div class="col-6 my-2">
-            <a type="button" class="btn btn-primary float-end" href={{ url('/student') }}>Create new Student</a>
+            <a type="button" class="btn btn-info float-end" href={{ url('/student-create') }}>Create new Student</a>
         </div>
     </div>
     <div class="row">
