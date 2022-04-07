@@ -7,7 +7,7 @@
             <h2>Student List</h2>
         </div>
         <div class="col-6 my-2">
-            <a type="button" class="btn btn-primary float-end" href={{ url('/student') }}>Create new Student</a>
+            <a type="button" class="btn btn-primary float-end" href="{{ url('/student-create') }}">Create new Student</a>
         </div>
     </div>
     <div class="row">
@@ -32,7 +32,7 @@
                     <td>{{$student->surname}}</td>
                     <td>{{$student->dob}}</td>
                     <td>{{$student->year_enroll}}</td>
-                    <td><img class="img-thumbnail rounded" style="width:60px; height=60px; border-radius: 50%;" src="/image/{{ $student->image }}" alt=""></td>
+                    <td><img class="img-thumbnail rounded" style="width:60px; height:60px; border-radius: 50%;" src="/image/{{ $student->image }}" alt=""></td>
                     <td>
                         <a type="button" class="btn btn-secondary btn-sm" href="{{ url('/result-view',$student->id) }}">Result</a>
                         <a type="button" class="btn btn-warning btn-sm" href="{{ url('/student-edit',$student->id) }}">Edit</a>
