@@ -46,3 +46,7 @@ Route::post('result-store/{id}',[ResultController::class,'store']);
 Route::get('result-delete/{id}',[ResultController::class,'destroy']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
