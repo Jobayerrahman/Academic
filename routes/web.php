@@ -19,6 +19,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/react-home', function () {
+    return view('reacthome');
+});
+
+Route::get('/bootstrap-home', function () {
+    return view('bootstraphome');
+});
+
 Route::get('/student-list',[StudentController::class,'index']);
 Route::get('/student-create',[StudentController::class,'create']);
 Route::post('student-store',[StudentController::class,'store']);
